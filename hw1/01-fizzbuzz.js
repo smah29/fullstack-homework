@@ -21,7 +21,6 @@ const fizzbuzz = () => {
     } else if (i % 5 === 0) {
       output = 'buzz';
     }
-    // eslint-disable-next-line no-console
     console.log(output);
   }
 };
