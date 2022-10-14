@@ -1,5 +1,5 @@
 /** Exercise 04 - API **/
-//using v2 API
+//using v2 API which is already sorted
 const url = 'https://restcountries.com/v2/all';
 //for formatting population
 const nf = new Intl.NumberFormat('en-US');
