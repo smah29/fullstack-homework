@@ -11,13 +11,17 @@ function reverseTheNumber(event) {
         output.style.paddingTop = '15px'
         main.appendChild(output);
     }
-    let input = document.getElementById('input');
-    if (input.value.length !== 8) {
+    let input = document.getElementById('input').value;
+
+    //removing leading zeros, ex 00000000
+    input = input.replace(/^0+/, '');
+
+    if (input.length !== 8) {
         output.textContent = `Error: Please input an 8-digit number`;
         output.style.color = 'red';
     } else {
         let reverse = 0;
-        let currVal = input.value;
+        let currVal = input;
         let lastDigit;
 
         while (currVal != 0) {
@@ -25,7 +29,7 @@ function reverseTheNumber(event) {
             reverse = reverse * 10 + lastDigit;
             currVal = Math.floor(currVal / 10);
         }
-        output.textContent = `${input.value} --> ${reverse}`;
+        output.textContent = `${input} --> ${reverse}`;
         output.style.color = 'green';
     }
     event.preventDefault();
