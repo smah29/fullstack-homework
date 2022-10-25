@@ -7,7 +7,6 @@ In this repository, you will find starter files for the homework assignments for
 - Homework 1 - Setup and JavaScript
 - Homework 2 - JavaScript
 - Homework 3 - Node.js
-  -- Requirement for 03-form.js : npm i express
 - Homework 4 - Express and Templating Engines
 
 Check Canvas for more information on each assignment.
