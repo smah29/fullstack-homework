@@ -12,6 +12,20 @@ const server = http.createServer((req, res) => {
   // source: https://developer.mozilla.org/en-US/docs/Web/API/URL
   let url = new URL(req.url, `http://${req.headers.host}`);
 
+  searchParams = url.search.substring(1);//removing ?
+  let queries = {};
+  searchParams && searchParams.split('&').forEach(
+    function (queryPair) {
+      let querySplit = queryPair.split('=');
+      let key = typeof querySplit[0] === 'undefined' ? '' : querySplit[0];
+      let val = typeof querySplit[1] === 'undefined' ? '' : querySplit[1];
+      if (!key && !val) { }
+      else {
+        queries[key] = val;
+      }
+    }
+  );
+
   let getRoutes = () => {
     let result = '';
 
@@ -29,10 +43,15 @@ const server = http.createServer((req, res) => {
     res.write(`<h1>Exercise 02</h1>`);
 
     res.write(`<ul> ${routeResults} </ul>`);
+  } else if (queries) {
+    let result = '';
+    for (const [key, value] of Object.entries(queries)) {
+      result += `<tr><td style='border: 1px solid black;'>${key}</td>
+                     <td style='border: 1px solid black;'>${value}</td>
+                 </tr>`;
+    }
+    res.write(`<table style='border: 1px solid black;'> ${result} </table>`);
   }
-
-  // Add your code here
-
   res.end();
 });
 
