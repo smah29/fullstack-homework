@@ -29,10 +29,6 @@ const server = http.createServer((req, res) => {
     });
     req.on('end', () => {
       res.writeHead(200);
-      // let name = queries["name"];
-      // let email = queries["email"];
-      // let comments = queries["comments"];
-      // let signup = queries["signup"];
 
       let { name, email, comments, signup } = queries;
       res.write(`<p>Name: ${name}<p>`);
