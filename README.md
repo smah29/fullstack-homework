@@ -10,6 +10,7 @@ In this repository, you will find starter files for the homework assignments for
   -- Requirement for 03-form.js : npm i node-static
 - Homework 4 - Express and Templating Engines
   -- Requirement for 03-form.js : npm i express
+  -- Requirement for 02-sessions.js : npm i express express-session
 
 Check Canvas for more information on each assignment.
 
