@@ -11,6 +11,7 @@ In this repository, you will find starter files for the homework assignments for
 - Homework 4 - Express and Templating Engines
   -- Requirement for 03-form.js : npm i express
   -- Requirement for 02-sessions.js : npm i express express-session
+  -- Requirement for 04-templates.js : npm i express axios
 
 Check Canvas for more information on each assignment.
 
